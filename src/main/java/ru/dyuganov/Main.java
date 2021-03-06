@@ -3,7 +3,6 @@ package main.java.ru.dyuganov;
 import main.java.ru.dyuganov.FileSorter.FileSorter;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -12,11 +11,11 @@ public class Main {
         try{
             FileSorter fileSorter = new FileSorter();
             String path;
+
             System.out.println("Enter folder to sort path:");
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
                 path = reader.readLine();
-                final File folder = new File(path);
-                fileSorter.sort(folder);
+                fileSorter.sort(path);
             }
         }
         catch (RuntimeException e){
