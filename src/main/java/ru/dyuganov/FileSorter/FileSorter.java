@@ -19,7 +19,7 @@ public class FileSorter {
             }
             Path filePath = Paths.get(fileInFolder.getPath());
             BasicFileAttributes attributes = Files.readAttributes(filePath, BasicFileAttributes.class);
-            String[] date = attributes.creationTime().toString().substring(0, stringLengthLimit).split("-");
+            String[] date = attributes.lastModifiedTime().toString().substring(0, stringLengthLimit).split("-");
             String creationDate = date[0] + "." + date[1] + "." + date[2];
             String pathFolderWithDateName = folderPath + "/" + creationDate;
             final File newFolder = new File(pathFolderWithDateName);
